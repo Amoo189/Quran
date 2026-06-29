@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>القرآن الکریم</title>
+    
+    <!-- ===== PWA Meta Tags ===== -->
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- ===== Manifest با لینک مستقیم آیکون ===== -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlx1MDYyN1x1MDY0NFx1MDYyN1x1MDYzMVx1MDYyN1x1MDYzNSBcdTA2NDhcdTA2MzFcdTA2MjciLAogICJzaG9ydF9uYW1lIjogIlx1MDYyN1x1MDY0NFx1MDYyNyIsCiAgImRlc2NyaXB0aW9uIjogIlx1MDYyN1x1MDY0NFx1MDYyN1x1MDYzMVx1MDYyN1x1MDYzNSBcdTA2NDhcdTA2MzFcdTA2MjcgXHUwNjI4XHUwNjI3IFx1MDYyN1x1MDY0OFx1MDYyN1x1MDYzNVx1MDYyN1x1MDY0NiBcdTA2NDhcdTA2MzFcdTA2MjcgXHUwNjI3XHUwNjQ4XHUwNjQ2XHUwNjI3XHUwNjM1IiwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwYjEyMjAiLAogICJ0aGVtZV9jb2xvciI6ICIjMGIxMjIwIiwKICAiZGlyIjogInJ0bCIsCiAgImxhbmciOiAiZmEiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJodHRwczovL3VpLWF2YXRhcnMuY29tL2FwaS8/bmFtZT1RJmJhY2tncm91bmQ9MGIxMjIwJmNvbG9yPWZiYmYyNCZzaXplPTE5MiIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJodHRwczovL3VpLWF2YXRhcnMuY29tL2FwaS8/bmFtZT1RJmJhY2tncm91bmQ9MGIxMjIwJmNvbG9yPWZiYmYyNCZzaXplPTUxMiIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgfQogIF0KfQ==" />
+    
+    <!-- ===== آیکون‌های مستقیم ===== -->
+    <link rel="icon" href="https://ui-avatars.com/api/?name=Q&background=0b1220&color=fbbf24&size=64" />
+    <link rel="apple-touch-icon" href="https://ui-avatars.com/api/?name=Q&background=0b1220&color=fbbf24&size=192" />
+    
+    <!-- ===== فونت‌ها ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <style>
+        /* ===== فونت عثمان طه ===== */
+        @font-face {
+            font-family: "UthmanicHafs";
+            src: url("https://cdn.jsdelivr.net/gh/arabtype/uthmanic-hafs@latest/UthmanicHafs.woff2") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "VazirmatnLocal";
+            src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* ===== تم‌ها ===== */
+        :root {
+            --bg: #0b1220;
+            --bg2: #0f172a;
+            --bg3: #1a2338;
+            --text: #e8eefc;
+            --muted: #9fb0d0;
+            --accent: #6ea8fe;
+            --accent2: #8b5cf6;
+            --gold: #fbbf24;
+            --border: rgba(255,255,255,.08);
+            --shadow: 0 15px 50px rgba(0,0,0,.5);
+            --radius: 24px;
+            --glass: blur(12px);
+            --card-bg: rgba(255,255,255,0.03);
+            --glow: 0 0 50px rgba(110,168,254,0.05);
+            --success: #34d399;
+            --danger: #ef4444;
+            
+            --bg-active: var(--bg);
+            --bg2-active: var(--bg2);
+            --bg3-active: var(--bg3);
+            --text-active: var(--text);
+            --muted-active: var(--muted);
+            --border-active: var(--border);
+            --shadow-active: var(--shadow);
+            --card-bg-active: var(--card-bg);
+            --glow-active: var(--glow);
+        }
+
+        [data-theme="light"] {
+            --bg-active: #f0f4f9;
+            --bg2-active: #ffffff;
+            --bg3-active: #e8edf5;
+            --text-active: #1a202c;
+            --muted-active: #4a5568;
+            --border-active: rgba(0,0,0,.08);
+            --shadow-active: 0 8px 30px rgba(0,0,0,.08);
+            --card-bg-active: rgba(0,0,0,0.01);
+            --glow-active: 0 0 30px rgba(110,168,254,0.03);
+        }
+
+        [data-theme="muharram"] {
+            --bg-active: #1a0a0a;
+            --bg2-active: #2d1414;
+            --bg3-active: #3d1a1a;
+            --text-active: #f5e6e6;
+            --muted-active: #c49a9a;
+            --accent: #e53e3e;
+            --accent2: #c53030;
+            --gold: #f6ad55;
+            --border-active: rgba(180, 40, 40, 0.25);
+            --shadow-active: 0 15px 50px rgba(80, 0, 0, 0.5);
+            --card-bg-active: rgba(180, 40, 40, 0.04);
+            --glow-active: 0 0 40px rgba(229, 62, 62, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: "VazirmatnLocal", "Segoe UI", sans-serif;
+            background: var(--bg-active);
+            color: var(--text-active);
+            min-height: 100vh;
+            transition: all 0.4s ease;
+            padding: 1rem;
+            overflow-x: hidden;
+        }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg2-active); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+
+        /* ===== Header ===== */
+        .header {
+            text-align: center;
+            padding: 1rem 0 0.6rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 2.5px;
+            background: linear-gradient(90deg, transparent, var(--gold), var(--accent2), transparent);
+            border-radius: 10px;
+            opacity: 0.6;
+        }
+        
+        .header h1 {
+            font-family: 'Amiri', 'VazirmatnLocal', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold), var(--accent2), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 6px;
+            line-height: 1.3;
+        }
+        
+        .header h1 i {
+            background: none;
+            -webkit-text-fill-color: initial;
+            color: var(--gold);
+            font-size: 2rem;
+        }
+        
+        .header .sub {
+            color: var(--muted-active);
+            font-size: 0.85rem;
+            margin-top: 0.2rem;
+            opacity: 0.5;
+            font-family: 'Amiri', serif;
+            letter-spacing: 3px;
+        }
+
+        /* ===== Install Banner ===== */
+        .install-banner {
+            display: none;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            padding: 0.8rem 1.2rem;
+            border-radius: 16px;
+            margin: 0 auto 1rem;
+            max-width: 500px;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 6px 30px rgba(110, 168, 254, 0.3);
+            animation: slideDown 0.5s ease;
+        }
+        
+        .install-banner.show { display: flex; }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .install-banner span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .install-banner .close-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        
+        .install-banner .close-btn:hover { background: rgba(255,255,255,0.3); }
+
+        /* ===== Top Bar ===== */
+        .top-bar {
+            max-width: 1200px;
+            margin: 0 auto 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg2-active);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            backdrop-filter: var(--glass);
+            border: 1px solid var(--border-active);
+            box-shadow: var(--shadow-active);
+            transition: all 0.3s;
+            position: sticky;
+            top: 8px;
+            z-index: 100;
+        }
+        
+        .top-bar input {
+            flex: 1;
+            min-width: 160px;
+            background: var(--bg3-active);
+            border: 1px solid var(--border-active);
+            border-radius: 30px;
+            padding: 0.6rem 1.2rem;
+            color: var(--text-active);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        
+        .top-bar input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(110, 168, 254, 0.12);
+        }
+        
+        .top-bar input::placeholder {
+            color: var(--muted-active);
+            opacity: 0.5;
+            font-size: 0.85rem;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-group button {
+            background: var(--bg3-active);
+            border: 1px solid var(--border-active);
+            color: var(--text-active);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .btn-group button i { font-size: 0.85rem; }
+        
+        .btn-group button:hover {
+            background: var(--accent);
+            color: #0b1220;
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        .btn-group button.active {
+            background: var(--accent);
+            color: #0b1220;
+            box-shadow: 0 0 30px rgba(110, 168, 254, 0.25);
+        }
+        
+        .theme-selector {
+            display: flex;
+            gap: 6px;
+        }
+        
+        .theme-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border-active);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+        
+        .theme-btn:hover { transform: scale(1.2) rotate(10deg); border-color: var(--gold); }
+        .theme-btn[data-theme="dark"] { background: #0b1220; border-color: #6ea8fe; }
+        .theme-btn[data-theme="light"] { background: #f0f4f9; border-color: #6b7280; }
+        .theme-btn[data-theme="muharram"] { background: #2d1414; border-color: #e53e3e; }
+
+        /* ===== Stats ===== */
+        .stats-bar {
+            max-width: 1200px;
+            margin: 0 auto 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--muted-active);
+            opacity: 0.6;
+        }
+        
+        .stats-bar span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg3-active);
+            padding: 4px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-active);
+        }
+        
+        .stats-bar i { font-size: 0.8rem; }
+
+        /* ===== Surah Grid ===== */
+        .surah-grid {
+            max-width: 1200px;
+            margin: 0 auto 1.2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 1rem;
+            padding: 0 0.3rem;
+        }
+        
+        .surah-card {
+            background: var(--bg2-active);
+            border: 1px solid var(--border-active);
+            border-radius: 20px;
+            padding: 1.2rem 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .surah-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            opacity: 0;
+            transition: 0.5s;
+            border-radius: 20px;
+        }
+        
+        .surah-card:hover::before { opacity: 0.08; }
+        
+        .surah-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            border-color: var(--accent);
+            box-shadow: 0 16px 50px rgba(110, 168, 254, 0.2);
+        }
+        
+        .surah-card:active { transform: scale(0.95); }
+        
+        .surah-card .surah-number {
+            font-size: 0.7rem;
+            color: var(--muted-active);
+            opacity: 0.5;
+            position: relative;
+            z-index: 1;
+            font-weight: 700;
+        }
+        
+        .surah-card .surah-name {
+            font-family: "UthmanicHafs", "VazirmatnLocal", serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-active);
+            margin: 0.2rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .surah-card .surah-name-ar {
+            font-family: "UthmanicHafs", serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            position: relative;
+            z-index: 1;
+            margin-top: 0.1rem;
+        }
+        
+        .surah-card .surah-info {
+            font-size: 0.7rem;
+            color: var(--muted-active);
+            opacity: 0.5;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        
+        .surah-card .surah-info span {
+            background: var(--bg3-active);
+            padding: 2px 12px;
+            border-radius: 12px;
+        }
+
+        /* ===== Quran Container ===== */
+        .quran-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            background: var(--bg2-active);
+            border-radius: var(--radius);
+            padding: 1.8rem 2.2rem 2.2rem;
+            backdrop-filter: var(--glass);
+            border: 1px solid var(--border-active);
+            box-shadow: var(--shadow-active);
+            transition: all 0.4s;
+            max-height: 80vh;
+            overflow-y: auto;
+            display: none;
+            scroll-behavior: smooth;
+        }
+        
+        .quran-container.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .surah-header {
+            text-align: center;
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid var(--border-active);
+            position: sticky;
+            top: 0;
+            background: var(--bg2-active);
+            z-index: 10;
+            padding-top: 0.3rem;
+        }
+        
+        .surah-header .surah-title {
+            font-family: "UthmanicHafs", serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+        
+        .surah-header .surah-meta {
+            font-size: 0.85rem;
+            color: var(--muted-active);
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        
+        .surah-header .surah-meta span {
+            background: var(--bg3-active);
+            padding: 3px 16px;
+            border-radius: 20px;
+        }
+
+        /* ===== Progress Bar ===== */
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: var(--bg3-active);
+            border-radius: 10px;
+            margin: 0.6rem 0 1.2rem;
+            overflow: hidden;
+        }
+        
+        .progress-bar .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        /* ===== Aya Cards ===== */
+        .aya-block {
+            background: var(--card-bg-active);
+            border: 1px solid var(--border-active);
+            border-radius: 18px;
+            padding: 1.2rem 1.4rem 1rem;
+            transition: all 0.35s ease;
+            cursor: pointer;
+            margin-bottom: 0.9rem;
+            box-shadow: var(--glow-active);
+            position: relative;
+        }
+        
+        .aya-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent), var(--accent2));
+            border-radius: 0 4px 4px 0;
+            opacity: 0;
+            transition: 0.4s;
+        }
+        
+        .aya-block:hover::before { opacity: 0.6; }
+        
+        .aya-block:hover {
+            background: rgba(110, 168, 254, 0.04);
+            border-color: var(--accent);
+            transform: translateX(-5px);
+            box-shadow: 0 10px 40px rgba(110, 168, 254, 0.08);
+        }
+        
+        .aya-block:active { transform: scale(0.98); }
+        
+        .aya-block .aya-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.3rem;
+        }
+        
+        .aya-block .aya-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            height: 38px;
+            font-size: 0.85rem;
+            color: var(--muted-active);
+            background: var(--bg3-active);
+            border-radius: 50%;
+            font-weight: 700;
+            border: 1px solid var(--border-active);
+            transition: 0.3s;
+        }
+        
+        .aya-block:hover .aya-number {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: scale(1.05);
+        }
+        
+        .aya-block .aya-page-badge {
+            font-size: 0.7rem;
+            color: var(--muted-active);
+            background: var(--bg3-active);
+            padding: 3px 14px;
+            border-radius: 20px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .aya-block .aya-page-badge i { font-size: 0.65rem; }
+        .aya-block:hover .aya-page-badge { opacity: 1; }
+        
+        .aya-block .aya-text {
+            font-family: "UthmanicHafs", serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 2.5;
+            word-spacing: 3px;
+            color: var(--text-active);
+            direction: rtl;
+            padding: 0.4rem 0;
+        }
+        
+        .aya-block .aya-text.recited {
+            color: var(--gold);
+            text-shadow: 0 0 40px rgba(251, 191, 36, 0.2);
+        }
+        
+        .aya-block .aya-translation {
+            font-family: "VazirmatnLocal", sans-serif;
+            font-size: 1rem;
+            color: var(--muted-active);
+            padding: 0.4rem 0 0.3rem 1rem;
+            line-height: 1.9;
+            border-right: 2.5px solid var(--accent);
+            margin-right: 0.5rem;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        
+        .aya-block:hover .aya-translation { opacity: 1; }
+        
+        .aya-block .aya-actions {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 0.6rem;
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--border-active);
+            flex-wrap: wrap;
+        }
+        
+        .aya-block .aya-actions button {
+            background: var(--bg3-active);
+            border: 1px solid var(--border-active);
+            color: var(--muted-active);
+            padding: 0.35rem 1.1rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .aya-block .aya-actions button i { font-size: 0.8rem; }
+        
+        .aya-block .aya-actions button:hover {
+            background: var(--accent);
+            color: #0b1220;
+            border-color: var(--accent);
+            transform: scale(1.06);
+        }
+        
+        .aya-block .aya-actions button.playing {
+            background: var(--gold);
+            color: #0b1220;
+            border-color: var(--gold);
+            animation: pulseBtn 1s infinite;
+        }
+        
+        @keyframes pulseBtn {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+        }
+        
+        .playing-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulseDot 1s infinite;
+        }
+        
+        @keyframes pulseDot {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* ===== Player Controls ===== */
+        .player-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--border-active);
+            flex-wrap: wrap;
+        }
+        
+        .player-controls button {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            border: none;
+            color: #0b1220;
+            padding: 0.6rem 1.8rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 6px 25px rgba(110, 168, 254, 0.25);
+        }
+        
+        .player-controls button:hover {
+            transform: scale(1.06) translateY(-3px);
+            box-shadow: 0 10px 40px rgba(110, 168, 254, 0.35);
+        }
+        
+        .player-controls .btn-secondary {
+            background: var(--bg3-active);
+            color: var(--text-active);
+            border: 1px solid var(--border-active);
+            box-shadow: none;
+        }
+        
+        .player-controls .btn-secondary:hover {
+            background: var(--accent);
+            color: #0b1220;
+        }
+        
+        .player-controls .btn-secondary.active {
+            background: var(--gold);
+            color: #0b1220;
+            border-color: var(--gold);
+        }
+        
+        .audio-status {
+            text-align: center;
+            padding: 0.4rem;
+            font-size: 0.9rem;
+            color: var(--muted-active);
+        }
+        
+        .audio-status.success { color: var(--gold); }
+        .audio-status.error { color: var(--danger); }
+        .audio-status.loading { color: var(--accent); }
+
+        /* ===== Buttons ===== */
+        .back-btn, .scroll-top-btn {
+            position: fixed;
+            bottom: 25px;
+            background: var(--bg2-active);
+            border: 1px solid var(--border-active);
+            border-radius: 50%;
+            width: 52px;
+            height: 52px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: var(--text-active);
+            box-shadow: var(--shadow-active);
+            transition: all 0.3s;
+            z-index: 100;
+        }
+        
+        .back-btn { left: 25px; }
+        .scroll-top-btn { right: 25px; }
+        
+        .back-btn:hover, .scroll-top-btn:hover {
+            transform: scale(1.1);
+            border-color: var(--accent);
+        }
+        
+        .back-btn:hover { transform: scale(1.1) rotate(-10deg); }
+        .scroll-top-btn:hover { transform: scale(1.1) rotate(10deg); }
+        
+        .back-btn.show, .scroll-top-btn.show { display: flex; }
+
+        /* ===== Loading ===== */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--muted-active);
+        }
+        
+        .loading i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error-msg {
+            text-align: center;
+            padding: 3rem;
+            color: var(--danger);
+        }
+        
+        .error-msg i {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== Toast ===== */
+        .toast {
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%) translateY(120px);
+            background: var(--bg2-active);
+            border: 1px solid var(--border-active);
+            padding: 1rem 2rem;
+            border-radius: 18px;
+            box-shadow: var(--shadow-active);
+            color: var(--text-active);
+            font-size: 0.95rem;
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 90%;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        .toast i { font-size: 1.4rem; }
+        .toast.success i { color: var(--success); }
+        .toast.error i { color: var(--danger); }
+        .toast.info i { color: var(--accent); }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 992px) {
+            .surah-grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+            .aya-block .aya-text { font-size: 1.6rem; }
+            .quran-container { padding: 1.4rem 1.6rem; }
+            .header h1 { font-size: 2.4rem; }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; letter-spacing: 4px; }
+            .header h1 i { font-size: 1.5rem; }
+            .top-bar { padding: 0.5rem 1.2rem; border-radius: 40px; gap: 0.5rem; }
+            .top-bar input { font-size: 0.85rem; padding: 0.5rem 1rem; min-width: 120px; }
+            .surah-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.7rem; }
+            .surah-card { padding: 1rem 0.4rem; border-radius: 18px; }
+            .surah-card .surah-name { font-size: 1.3rem; }
+            .surah-card .surah-name-ar { font-size: 1.1rem; }
+            .aya-block .aya-text { font-size: 1.4rem; line-height: 2.2; }
+            .quran-container { padding: 1rem 1.2rem 1.8rem; max-height: 72vh; }
+            .aya-block { padding: 1rem 1rem 0.8rem; }
+            .btn-group button { font-size: 0.75rem; padding: 0.3rem 0.9rem; }
+            .theme-btn { width: 28px; height: 28px; font-size: 0.6rem; }
+            .aya-block .aya-translation { font-size: 0.85rem; padding-right: 0.4rem; margin-right: 0.3rem; }
+            .back-btn, .scroll-top-btn { width: 44px; height: 44px; font-size: 1.1rem; bottom: 18px; }
+            .back-btn { left: 18px; }
+            .scroll-top-btn { right: 18px; }
+            .stats-bar { gap: 0.6rem; font-size: 0.7rem; }
+            .stats-bar span { padding: 3px 12px; }
+            .install-banner { font-size: 0.85rem; padding: 0.6rem 1rem; }
+            .surah-header .surah-title { font-size: 2rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 { font-size: 1.6rem; letter-spacing: 2px; }
+            .header h1 i { font-size: 1.2rem; }
+            .header .sub { font-size: 0.7rem; }
+            .surah-grid { 
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
+                gap: 0.6rem;
+            }
+            .surah-card { 
+                padding: 0.8rem 0.3rem; 
+                border-radius: 16px;
+            }
+            .surah-card .surah-name { font-size: 1.1rem; }
+            .surah-card .surah-name-ar { font-size: 0.95rem; }
+            .surah-card .surah-info { font-size: 0.55rem; }
+            .surah-card .surah-info span { padding: 1px 6px; }
+            .aya-block .aya-text { 
+                font-size: 1.2rem; 
+                line-height: 2;
+            }
+            .aya-block .aya-number { 
+                min-width: 32px; 
+                height: 32px; 
+                font-size: 0.75rem; 
+            }
+            .aya-block .aya-page-badge { 
+                font-size: 0.6rem; 
+                padding: 2px 10px; 
+            }
+            .quran-container { 
+                padding: 0.6rem 0.7rem 1.2rem; 
+                max-height: 65vh; 
+                border-radius: 18px;
+            }
+            .surah-header .surah-title { font-size: 1.8rem; }
+            .surah-header .surah-meta { font-size: 0.65rem; gap: 6px; }
+            .surah-header .surah-meta span { padding: 2px 10px; }
+            .player-controls button { 
+                padding: 0.4rem 1.2rem; 
+                font-size: 0.75rem; 
+            }
+            .aya-block .aya-actions button { 
+                font-size: 0.65rem; 
+                padding: 0.2rem 0.7rem; 
+            }
+            .top-bar input { 
+                font-size: 0.7rem; 
+                padding: 0.35rem 0.7rem; 
+                min-width: 80px; 
+            }
+            .btn-group button { 
+                font-size: 0.6rem; 
+                padding: 0.2rem 0.6rem; 
+            }
+            .theme-btn { 
+                width: 22px; 
+                height: 22px; 
+                font-size: 0.45rem; 
+            }
+            .back-btn, .scroll-top-btn { 
+                width: 38px; 
+                height: 38px; 
+                font-size: 0.9rem; 
+                bottom: 12px; 
+            }
+            .back-btn { left: 12px; }
+            .scroll-top-btn { right: 12px; }
+            .audio-status { font-size: 0.75rem; }
+            .toast { 
+                font-size: 0.8rem; 
+                padding: 0.7rem 1.2rem;
+                bottom: 75px;
+            }
+            .stats-bar { 
+                gap: 0.4rem; 
+                font-size: 0.6rem; 
+            }
+            .stats-bar span { 
+                padding: 2px 8px; 
+                gap: 4px;
+            }
+            .install-banner { 
+                font-size: 0.75rem; 
+                padding: 0.5rem 0.8rem;
+                border-radius: 14px;
+            }
+            .install-banner span { gap: 6px; }
+            .install-banner .close-btn { 
+                width: 24px; 
+                height: 24px; 
+                font-size: 0.7rem; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="header">
+    <h1><i class="fas fa-book-quran"></i> القرآن الکریم</h1>
+    <div class="sub">﴿ بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ ﴾</div>
+</header>
+
+<!-- ===== Install Banner ===== -->
+<div class="install-banner" id="installBanner">
+    <span><i class="fas fa-download"></i> نصب برنامه روی موبایل</span>
+    <button class="close-btn" id="closeInstallBanner"><i class="fas fa-times"></i></button>
+</div>
+
+<!-- ===== Top Bar ===== -->
+<div class="top-bar">
+    <input type="text" id="searchInput" placeholder="🔍 جستجوی سوره..." />
+    <div class="btn-group">
+        <button id="modeFull" class="active"><i class="fas fa-play-circle"></i> کامل</button>
+        <button id="modeAya"><i class="fas fa-music"></i> آیه‌ای</button>
+    </div>
+    <div class="theme-selector">
+        <button class="theme-btn" data-theme="dark" title="تاریک"><i class="fas fa-moon" style="color: #6ea8fe;"></i></button>
+        <button class="theme-btn" data-theme="light" title="روشن"><i class="fas fa-sun" style="color: #fbbf24;"></i></button>
+        <button class="theme-btn" data-theme="muharram" title="محرم"><i class="fas fa-heart" style="color: #e53e3e;"></i></button>
+    </div>
+</div>
+
+<!-- ===== Stats ===== -->
+<div class="stats-bar">
+    <span><i class="fas fa-book"></i> <span id="totalSurahs">۱۱۴</span> سوره</span>
+    <span><i class="fas fa-hashtag"></i> <span id="totalVerses">۶۲۳۶</span> آیه</span>
+    <span><i class="fas fa-page"></i> <span id="totalPages">۶۰۴</span> صفحه</span>
+</div>
+
+<!-- ===== Surah Grid ===== -->
+<div class="surah-grid" id="surahGrid"></div>
+
+<!-- ===== Quran Container ===== -->
+<div class="quran-container" id="quranContainer">
+    <div class="surah-header">
+        <div class="surah-title" id="surahTitle">الفاتحة</div>
+        <div class="surah-meta" id="surahMeta">
+            <span><i class="fas fa-map-pin"></i> <span id="surahType">مکیه</span></span>
+            <span><i class="fas fa-hashtag"></i> <span id="surahVerses">۷</span> آیه</span>
+            <span><i class="fas fa-book"></i> ص <span id="surahPage">۱</span></span>
+        </div>
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div id="ayaList">
+        <div class="loading"><i class="fas fa-spinner"></i>در حال بارگذاری</div>
+    </div>
+    <div class="audio-status" id="audioStatus"></div>
+    <div class="player-controls">
+        <button id="stopAudioBtn"><i class="fas fa-stop-circle"></i> توقف</button>
+        <button id="repeatBtn" class="btn-secondary"><i class="fas fa-repeat"></i> تکرار</button>
+        <button id="speedBtn" class="btn-secondary"><i class="fas fa-speed"></i> ۱x</button>
+    </div>
+</div>
+
+<!-- ===== Back & Scroll Buttons ===== -->
+<button class="back-btn" id="backBtn"><i class="fas fa-arrow-up"></i></button>
+<button class="scroll-top-btn" id="scrollTopBtn"><i class="fas fa-chevron-up"></i></button>
+
+<!-- ===== Toast ===== -->
+<div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage">پیام</span>
+</div>
+
+<script>
+    // ================================================================
+    //  ====== Service Worker Registration (PWA) ======
+    // ================================================================
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js')
+                .then(registration => {
+                    console.log('✅ Service Worker registered successfully');
+                })
+                .catch(err => {
+                    console.log('❌ Service Worker registration failed:', err);
+                });
+        });
+    }
+
+    // ================================================================
+    //  ====== Install PWA ======
+    // ================================================================
+    let deferredPrompt;
+    const installBanner = document.getElementById('installBanner');
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installBanner.classList.add('show');
+    });
+
+    installBanner.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const result = await deferredPrompt.userChoice;
+            if (result.outcome === 'accepted') {
+                showToast('✅ برنامه نصب شد!', 'success');
+                installBanner.classList.remove('show');
+            }
+            deferredPrompt = null;
+        }
+    });
+
+    document.getElementById('closeInstallBanner').addEventListener('click', (e) => {
+        e.stopPropagation();
+        installBanner.classList.remove('show');
+    });
+
+    // ================================================================
+    //  ====== لیست 114 سوره ======
+    // ================================================================
+    const surahList = [
+        { id: 1, name: "الفاتحة", nameAr: "الفاتحة", type: "مکیه", verses: 7, page: 1 },
+        { id: 2, name: "البقرة", nameAr: "البقرة", type: "مدنیه", verses: 286, page: 2 },
+        { id: 3, name: "آل عمران", nameAr: "آل عمران", type: "مدنیه", verses: 200, page: 50 },
+        { id: 4, name: "النساء", nameAr: "النساء", type: "مدنیه", verses: 176, page: 77 },
+        { id: 5, name: "المائدة", nameAr: "المائدة", type: "مدنیه", verses: 120, page: 106 },
+        { id: 6, name: "الأنعام", nameAr: "الأنعام", type: "مکیه", verses: 165, page: 128 },
+        { id: 7, name: "الأعراف", nameAr: "الأعراف", type: "مکیه", verses: 206, page: 151 },
+        { id: 8, name: "الأنفال", nameAr: "الأنفال", type: "مدنیه", verses: 75, page: 177 },
+        { id: 9, name: "التوبة", nameAr: "التوبة", type: "مدنیه", verses: 129, page: 187 },
+        { id: 10, name: "يونس", nameAr: "يونس", type: "مکیه", verses: 109, page: 208 },
+        { id: 11, name: "هود", nameAr: "هود", type: "مکیه", verses: 123, page: 221 },
+        { id: 12, name: "يوسف", nameAr: "يوسف", type: "مکیه", verses: 111, page: 235 },
+        { id: 13, name: "الرعد", nameAr: "الرعد", type: "مدنیه", verses: 43, page: 249 },
+        { id: 14, name: "إبراهيم", nameAr: "إبراهيم", type: "مکیه", verses: 52, page: 255 },
+        { id: 15, name: "الحجر", nameAr: "الحجر", type: "مکیه", verses: 99, page: 262 },
+        { id: 16, name: "النحل", nameAr: "النحل", type: "مکیه", verses: 128, page: 267 },
+        { id: 17, name: "الإسراء", nameAr: "الإسراء", type: "مکیه", verses: 111, page: 282 },
+        { id: 18, name: "الكهف", nameAr: "الكهف", type: "مکیه", verses: 110, page: 293 },
+        { id: 19, name: "مريم", nameAr: "مريم", type: "مکیه", verses: 98, page: 305 },
+        { id: 20, name: "طه", nameAr: "طه", type: "مکیه", verses: 135, page: 312 },
+        { id: 21, name: "الأنبياء", nameAr: "الأنبياء", type: "مکیه", verses: 112, page: 322 },
+        { id: 22, name: "الحج", nameAr: "الحج", type: "مدنیه", verses: 78, page: 332 },
+        { id: 23, name: "المؤمنون", nameAr: "المؤمنون", type: "مکیه", verses: 118, page: 342 },
+        { id: 24, name: "النور", nameAr: "النور", type: "مدنیه", verses: 64, page: 350 },
+        { id: 25, name: "الفرقان", nameAr: "الفرقان", type: "مکیه", verses: 77, page: 359 },
+        { id: 26, name: "الشعراء", nameAr: "الشعراء", type: "مکیه", verses: 227, page: 367 },
+        { id: 27, name: "النمل", nameAr: "النمل", type: "مکیه", verses: 93, page: 377 },
+        { id: 28, name: "القصص", nameAr: "القصص", type: "مکیه", verses: 88, page: 385 },
+        { id: 29, name: "العنكبوت", nameAr: "العنكبوت", type: "مکیه", verses: 69, page: 396 },
+        { id: 30, name: "الروم", nameAr: "الروم", type: "مکیه", verses: 60, page: 404 },
+        { id: 31, name: "لقمان", nameAr: "لقمان", type: "مکیه", verses: 34, page: 411 },
+        { id: 32, name: "السجدة", nameAr: "السجدة", type: "مکیه", verses: 30, page: 415 },
+        { id: 33, name: "الأحزاب", nameAr: "الأحزاب", type: "مدنیه", verses: 73, page: 418 },
+        { id: 34, name: "سبأ", nameAr: "سبأ", type: "مکیه", verses: 54, page: 428 },
+        { id: 35, name: "فاطر", nameAr: "فاطر", type: "مکیه", verses: 45, page: 434 },
+        { id: 36, name: "يس", nameAr: "يس", type: "مکیه", verses: 83, page: 440 },
+        { id: 37, name: "الصافات", nameAr: "الصافات", type: "مکیه", verses: 182, page: 446 },
+        { id: 38, name: "ص", nameAr: "ص", type: "مکیه", verses: 88, page: 453 },
+        { id: 39, name: "الزمر", nameAr: "الزمر", type: "مکیه", verses: 75, page: 458 },
+        { id: 40, name: "غافر", nameAr: "غافر", type: "مکیه", verses: 85, page: 467 },
+        { id: 41, name: "فصلت", nameAr: "فصلت", type: "مکیه", verses: 54, page: 477 },
+        { id: 42, name: "الشورى", nameAr: "الشورى", type: "مکیه", verses: 53, page: 483 },
+        { id: 43, name: "الزخرف", nameAr: "الزخرف", type: "مکیه", verses: 89, page: 489 },
+        { id: 44, name: "الدخان", nameAr: "الدخان", type: "مکیه", verses: 59, page: 496 },
+        { id: 45, name: "الجاثية", nameAr: "الجاثية", type: "مکیه", verses: 37, page: 499 },
+        { id: 46, name: "الأحقاف", nameAr: "الأحقاف", type: "مکیه", verses: 35, page: 502 },
+        { id: 47, name: "محمد", nameAr: "محمد", type: "مدنیه", verses: 38, page: 507 },
+        { id: 48, name: "الفتح", nameAr: "الفتح", type: "مدنیه", verses: 29, page: 511 },
+        { id: 49, name: "الحجرات", nameAr: "الحجرات", type: "مدنیه", verses: 18, page: 515 },
+        { id: 50, name: "ق", nameAr: "ق", type: "مکیه", verses: 45, page: 518 },
+        { id: 51, name: "الذاريات", nameAr: "الذاريات", type: "مکیه", verses: 60, page: 520 },
+        { id: 52, name: "الطور", nameAr: "الطور", type: "مکیه", verses: 49, page: 523 },
+        { id: 53, name: "النجم", nameAr: "النجم", type: "مکیه", verses: 62, page: 526 },
+        { id: 54, name: "القمر", nameAr: "القمر", type: "مکیه", verses: 55, page: 528 },
+        { id: 55, name: "الرحمن", nameAr: "الرحمن", type: "مدنیه", verses: 78, page: 531 },
+        { id: 56, name: "الواقعة", nameAr: "الواقعة", type: "مکیه", verses: 96, page: 534 },
+        { id: 57, name: "الحديد", nameAr: "الحديد", type: "مدنیه", verses: 29, page: 537 },
+        { id: 58, name: "المجادلة", nameAr: "المجادلة", type: "مدنیه", verses: 22, page: 542 },
+        { id: 59, name: "الحشر", nameAr: "الحشر", type: "مدنیه", verses: 24, page: 545 },
+        { id: 60, name: "الممتحنة", nameAr: "الممتحنة", type: "مدنیه", verses: 13, page: 549 },
+        { id: 61, name: "الصف", nameAr: "الصف", type: "مدنیه", verses: 14, page: 551 },
+        { id: 62, name: "الجمعة", nameAr: "الجمعة", type: "مدنیه", verses: 11, page: 553 },
+        { id: 63, name: "المنافقون", nameAr: "المنافقون", type: "مدنیه", verses: 11, page: 554 },
+        { id: 64, name: "التغابن", nameAr: "التغابن", type: "مدنیه", verses: 18, page: 556 },
+        { id: 65, name: "الطلاق", nameAr: "الطلاق", type: "مدنیه", verses: 12, page: 558 },
+        { id: 66, name: "التحريم", nameAr: "التحريم", type: "مدنیه", verses: 12, page: 560 },
+        { id: 67, name: "الملك", nameAr: "الملك", type: "مکیه", verses: 30, page: 562 },
+        { id: 68, name: "القلم", nameAr: "القلم", type: "مکیه", verses: 52, page: 564 },
+        { id: 69, name: "الحاقة", nameAr: "الحاقة", type: "مکیه", verses: 52, page: 566 },
+        { id: 70, name: "المعارج", nameAr: "المعارج", type: "مکیه", verses: 44, page: 568 },
+        { id: 71, name: "نوح", nameAr: "نوح", type: "مکیه", verses: 28, page: 570 },
+        { id: 72, name: "الجن", nameAr: "الجن", type: "مکیه", verses: 28, page: 572 },
+        { id: 73, name: "المزمل", nameAr: "المزمل", type: "مکیه", verses: 20, page: 574 },
+        { id: 74, name: "المدثر", nameAr: "المدثر", type: "مکیه", verses: 56, page: 575 },
+        { id: 75, name: "القيامة", nameAr: "القيامة", type: "مکیه", verses: 40, page: 577 },
+        { id: 76, name: "الإنسان", nameAr: "الإنسان", type: "مدنیه", verses: 31, page: 578 },
+        { id: 77, name: "المرسلات", nameAr: "المرسلات", type: "مکیه", verses: 50, page: 580 },
+        { id: 78, name: "النبأ", nameAr: "النبأ", type: "مکیه", verses: 40, page: 582 },
+        { id: 79, name: "النازعات", nameAr: "النازعات", type: "مکیه", verses: 46, page: 583 },
+        { id: 80, name: "عبس", nameAr: "عبس", type: "مکیه", verses: 42, page: 585 },
+        { id: 81, name: "التكوير", nameAr: "التكوير", type: "مکیه", verses: 29, page: 586 },
+        { id: 82, name: "الإنفطار", nameAr: "الإنفطار", type: "مکیه", verses: 19, page: 587 },
+        { id: 83, name: "المطففين", nameAr: "المطففين", type: "مکیه", verses: 36, page: 587 },
+        { id: 84, name: "الإنشقاق", nameAr: "الإنشقاق", type: "مکیه", verses: 25, page: 589 },
+        { id: 85, name: "البروج", nameAr: "البروج", type: "مکیه", verses: 22, page: 590 },
+        { id: 86, name: "الطارق", nameAr: "الطارق", type: "مکیه", verses: 17, page: 591 },
+        { id: 87, name: "الأعلى", nameAr: "الأعلى", type: "مکیه", verses: 19, page: 591 },
+        { id: 88, name: "الغاشية", nameAr: "الغاشية", type: "مکیه", verses: 26, page: 592 },
+        { id: 89, name: "الفجر", nameAr: "الفجر", type: "مکیه", verses: 30, page: 593 },
+        { id: 90, name: "البلد", nameAr: "البلد", type: "مکیه", verses: 20, page: 594 },
+        { id: 91, name: "الشمس", nameAr: "الشمس", type: "مکیه", verses: 15, page: 595 },
+        { id: 92, name: "الليل", nameAr: "الليل", type: "مکیه", verses: 21, page: 595 },
+        { id: 93, name: "الضحى", nameAr: "الضحى", type: "مکیه", verses: 11, page: 596 },
+        { id: 94, name: "الشرح", nameAr: "الشرح", type: "مکیه", verses: 8, page: 596 },
+        { id: 95, name: "التين", nameAr: "التين", type: "مکیه", verses: 8, page: 597 },
+        { id: 96, name: "العلق", nameAr: "العلق", type: "مکیه", verses: 19, page: 597 },
+        { id: 97, name: "القدر", nameAr: "القدر", type: "مکیه", verses: 5, page: 598 },
+        { id: 98, name: "البينة", nameAr: "البينة", type: "مدنیه", verses: 8, page: 598 },
+        { id: 99, name: "الزلزلة", nameAr: "الزلزلة", type: "مدنیه", verses: 8, page: 599 },
+        { id: 100, name: "العاديات", nameAr: "العاديات", type: "مکیه", verses: 11, page: 599 },
+        { id: 101, name: "القارعة", nameAr: "القارعة", type: "مکیه", verses: 11, page: 600 },
+        { id: 102, name: "التكاثر", nameAr: "التكاثر", type: "مکیه", verses: 8, page: 600 },
+        { id: 103, name: "العصر", nameAr: "العصر", type: "مکیه", verses: 3, page: 601 },
+        { id: 104, name: "الهمزة", nameAr: "الهمزة", type: "مکیه", verses: 9, page: 601 },
+        { id: 105, name: "الفيل", nameAr: "الفيل", type: "مکیه", verses: 5, page: 601 },
+        { id: 106, name: "قريش", nameAr: "قريش", type: "مکیه", verses: 4, page: 602 },
+        { id: 107, name: "الماعون", nameAr: "الماعون", type: "مکیه", verses: 7, page: 602 },
+        { id: 108, name: "الكوثر", nameAr: "الكوثر", type: "مکیه", verses: 3, page: 602 },
+        { id: 109, name: "الكافرون", nameAr: "الكافرون", type: "مکیه", verses: 6, page: 603 },
+        { id: 110, name: "النصر", nameAr: "النصر", type: "مدنیه", verses: 3, page: 603 },
+        { id: 111, name: "المسد", nameAr: "المسد", type: "مکیه", verses: 5, page: 603 },
+        { id: 112, name: "الإخلاص", nameAr: "الإخلاص", type: "مکیه", verses: 4, page: 604 },
+        { id: 113, name: "الفلق", nameAr: "الفلق", type: "مکیه", verses: 5, page: 604 },
+        { id: 114, name: "الناس", nameAr: "الناس", type: "مکیه", verses: 6, page: 604 }
+    ];
+    async function fetchSurahData(surahId) {
+        try {
+            const response1 = await fetch(`https://api.alquran.cloud/v1/surah/${surahId}/quran-uthmani`);
+            if (!response1.ok) throw new Error('Network error');
+            const data1 = await response1.json();
+            
+            const response2 = await fetch(`https://api.alquran.cloud/v1/surah/${surahId}/fa.ansarian`);
+            if (!response2.ok) throw new Error('Network error');
+            const data2 = await response2.json();
+            
+            const arabicVerses = data1.data.ayahs || [];
+            const persianVerses = data2.data.ayahs || [];
+            
+            const result = arabicVerses.map((verse, index) => ({
+                number: verse.numberInSurah,
+                text: verse.text,
+                translation: persianVerses[index]?.text || `ترجمه آیه ${verse.numberInSurah}`,
+                page: verse.page || 1
+            }));
+            
+            return result;
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            try {
+                const response = await fetch(`https://api.alquran.cloud/v1/surah/${surahId}/fa.irian`);
+                if (!response.ok) throw new Error('Network error');
+                const data = await response.json();
+                const verses = data.data.ayahs || [];
+                return verses.map((verse, index) => ({
+                    number: verse.numberInSurah,
+                    text: verse.text,
+                    translation: verse.text,
+                    page: verse.page || 1
+                }));
+            } catch (e) {
+                return [];
+            }
+        }
+    }
+
+    // ================================================================
+    //  ====== منابع صوتی (بدون فیلتر) ======
+    // ================================================================
+    function getAudioUrl(surahId, ayaNumber) {
+        return `https://cdn.islamic.network/quran/audio/128/ar.alafasy/${surahId}_${ayaNumber}.mp3`;
+    }
+
+    function getAudioUrl2(surahId, ayaNumber) {
+        const s = String(surahId).padStart(3, '0');
+        const a = String(ayaNumber).padStart(3, '0');
+        return `https://server8.mp3quran.net/afs/${s}${a}.mp3`;
+    }
+
+    function getAudioUrl3(surahId, ayaNumber) {
+        const s = String(surahId).padStart(3, '0');
+        const a = String(ayaNumber).padStart(3, '0');
+        return `https://download.quranicaudio.com/quran/ar/alafasy/mp3/128/${s}${a}.mp3`;
+    }
+
+    // ================================================================
+    //  ====== حالت‌های برنامه ======
+    // ================================================================
+    let currentMode = 'full';
+    let currentSurahId = 1;
+    let audio = new Audio();
+    let timeoutId = null;
+    let isPlaying = false;
+    let isRepeat = false;
+    let playbackSpeed = 1;
+    let currentVerseIndex = 0;
+    let versesCache = {};
+
+    // ================================================================
+    //  ====== Toast Notification ======
+    // ================================================================
+    function showToast(message, type = 'info') {
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+        const icon = toast.querySelector('i');
+        
+        icon.className = type === 'success' ? 'fas fa-check-circle' : 
+                        type === 'error' ? 'fas fa-exclamation-circle' : 
+                        'fas fa-info-circle';
+        toast.className = `toast ${type}`;
+        toastMessage.textContent = message;
+        
+        toast.classList.add('show');
+        clearTimeout(toast._timeout);
+        toast._timeout = setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    // ================================================================
+    //  ====== توابع صوتی ======
+    // ================================================================
+    function playAudioWithFallback(surahId, ayaNumber, callback) {
+        const urls = [
+            getAudioUrl(surahId, ayaNumber),
+            getAudioUrl2(surahId, ayaNumber),
+            getAudioUrl3(surahId, ayaNumber)
+        ];
+        
+        let currentIndex = 0;
+        const statusEl = document.getElementById('audioStatus');
+        
+        function tryPlay() {
+            if (currentIndex >= urls.length) {
+                statusEl.textContent = '❌ خطا در پخش صدا';
+                statusEl.className = 'audio-status error';
+                showToast('خطا در پخش صدا', 'error');
+                if (callback) callback();
+                return;
+            }
+            
+            statusEl.textContent = `🔄 اتصال...`;
+            statusEl.className = 'audio-status loading';
+            
+            audio = new Audio();
+            audio.src = urls[currentIndex];
+            audio.preload = 'auto';
+            audio.playbackRate = playbackSpeed;
+            
+            audio.oncanplaythrough = () => {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    statusEl.textContent = '🎵 در حال پخش...';
+                    statusEl.className = 'audio-status success';
+                }).catch(() => {
+                    currentIndex++;
+                    tryPlay();
+                });
+            };
+            
+            audio.onended = () => {
+                isPlaying = false;
+                statusEl.textContent = '✅ پخش کامل شد';
+                statusEl.className = 'audio-status success';
+                if (callback) callback();
+            };
+            
+            audio.onerror = () => {
+                currentIndex++;
+                tryPlay();
+            };
+            
+            setTimeout(() => {
+                if (!isPlaying && audio.readyState < 2) {
+                    audio.src = '';
+                    currentIndex++;
+                    tryPlay();
+                }
+            }, 8000);
+        }
+        
+        tryPlay();
+    }
+
+    function stopAllAudio() {
+        audio.pause();
+        audio.src = '';
+        audio.currentTime = 0;
+        clearTimeout(timeoutId);
+        isPlaying = false;
+        document.querySelectorAll('.aya-text').forEach(el => el.classList.remove('recited'));
+        document.querySelectorAll('.playing-indicator').forEach(el => el.remove());
+        document.querySelectorAll('.aya-actions button').forEach(el => {
+            el.classList.remove('playing');
+            el.innerHTML = '<i class="fas fa-play"></i> پخش';
+        });
+        document.getElementById('audioStatus').textContent = '⏹ متوقف شد';
+        document.getElementById('audioStatus').className = 'audio-status';
+        document.getElementById('progressFill').style.width = '0%';
+    }
+
+    // ================================================================
+    //  ====== رندر سوره ======
+    // ================================================================
+    async function renderSurah(surahId) {
+        const surah = surahList.find(s => s.id === surahId);
+        if (!surah) return;
+        
+        currentSurahId = surahId;
+        const container = document.getElementById('quranContainer');
+        container.classList.add('active');
+        
+        document.getElementById('surahTitle').textContent = surah.nameAr;
+        document.getElementById('surahType').textContent = surah.type;
+        document.getElementById('surahVerses').textContent = surah.verses;
+        document.getElementById('surahPage').textContent = surah.page;
+        
+        const ayaList = document.getElementById('ayaList');
+        ayaList.innerHTML = '<div class="loading"><i class="fas fa-spinner"></i>در حال بارگذاری</div>';
+        
+        const verses = await fetchSurahData(surahId);
+        versesCache[surahId] = verses;
+        
+        if (verses.length === 0) {
+            ayaList.innerHTML = '<div class="error-msg"><i class="fas fa-exclamation-circle"></i>خطا در بارگذاری</div>';
+            showToast('خطا در بارگذاری آیات', 'error');
+            return;
+        }
+        
+        ayaList.innerHTML = '';
+        
+        verses.forEach((verse, idx) => {
+            const block = document.createElement('div');
+            block.className = 'aya-block';
+            block.dataset.ayaIndex = idx;
+            
+            const top = document.createElement('div');
+            top.className = 'aya-top';
+            
+            const numSpan = document.createElement('span');
+            numSpan.className = 'aya-number';
+            numSpan.textContent = verse.number;
+            
+            const pageBadge = document.createElement('span');
+            pageBadge.className = 'aya-page-badge';
+            pageBadge.innerHTML = `<i class="fas fa-book"></i> ص ${verse.page || surah.page}`;
+            
+            top.appendChild(numSpan);
+            top.appendChild(pageBadge);
+            block.appendChild(top);
+            
+            const textSpan = document.createElement('div');
+            textSpan.className = 'aya-text';
+            textSpan.textContent = verse.text;
+            block.appendChild(textSpan);
+            
+            const translationDiv = document.createElement('div');
+            translationDiv.className = 'aya-translation';
+            translationDiv.textContent = `﴿ ${verse.translation} ﴾`;
+            block.appendChild(translationDiv);
+            
+            const actions = document.createElement('div');
+            actions.className = 'aya-actions';
+            
+            const playBtn = document.createElement('button');
+            playBtn.innerHTML = '<i class="fas fa-play"></i> پخش';
+            playBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentVerseIndex = idx;
+                
+                if (currentMode === 'aya') {
+                    stopAllAudio();
+                    textSpan.classList.add('recited');
+                    const indicator = document.createElement('span');
+                    indicator.className = 'playing-indicator';
+                    numSpan.after(indicator);
+                    playBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                    playBtn.classList.add('playing');
+                    
+                    playAudioWithFallback(surahId, verse.number, () => {
+                        textSpan.classList.remove('recited');
+                        indicator.remove();
+                        playBtn.innerHTML = '<i class="fas fa-play"></i> پخش';
+                        playBtn.classList.remove('playing');
+                        if (isRepeat) {
+                            setTimeout(() => {
+                                playBtn.click();
+                            }, 500);
+                        }
+                    });
+                } else {
+                    stopAllAudio();
+                    playFullSurah(surahId, idx);
+                }
+            });
+            
+            actions.appendChild(playBtn);
+            block.appendChild(actions);
+            
+            block.addEventListener('click', function(e) {
+                if (e.target.closest('button')) return;
+                const ayaIndex = parseInt(this.dataset.ayaIndex);
+                const verseData = verses[ayaIndex];
+                currentVerseIndex = ayaIndex;
+                
+                if (currentMode === 'aya') {
+                    stopAllAudio();
+                    this.querySelector('.aya-text').classList.add('recited');
+                    const indicator = document.createElement('span');
+                    indicator.className = 'playing-indicator';
+                    this.querySelector('.aya-number').after(indicator);
+                    const btn = this.querySelector('.aya-actions button');
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                    btn.classList.add('playing');
+                    
+                    playAudioWithFallback(surahId, verseData.number, () => {
+                        this.querySelector('.aya-text').classList.remove('recited');
+                        indicator.remove();
+                        btn.innerHTML = '<i class="fas fa-play"></i> پخش';
+                        btn.classList.remove('playing');
+                        if (isRepeat) {
+                            setTimeout(() => {
+                                btn.click();
+                            }, 500);
+                        }
+                    });
+                } else {
+                    stopAllAudio();
+                    playFullSurah(surahId, ayaIndex);
+                }
+            });
+            
+            ayaList.appendChild(block);
+        });
+        
+        setTimeout(() => {
+            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+        
+        document.getElementById('backBtn').classList.add('show');
+        document.getElementById('scrollTopBtn').classList.add('show');
+    }
+
+    // ================================================================
+    //  ====== پخش کامل سوره ======
+    // ================================================================
+    async function playFullSurah(surahId, startIndex = 0) {
+        const verses = versesCache[surahId] || await fetchSurahData(surahId);
+        if (verses.length === 0 || startIndex >= verses.length) return;
+        
+        stopAllAudio();
+        let idx = startIndex;
+        const ayaElements = document.querySelectorAll('.aya-block');
+        const total = verses.length;
+        
+        function playNext() {
+            if (idx >= verses.length) {
+                document.querySelectorAll('.aya-text').forEach(el => el.classList.remove('recited'));
+                document.querySelectorAll('.playing-indicator').forEach(el => el.remove());
+                document.querySelectorAll('.aya-actions button').forEach(el => {
+                    el.classList.remove('playing');
+                    el.innerHTML = '<i class="fas fa-play"></i> پخش';
+                });
+                document.getElementById('audioStatus').textContent = '✅ پایان سوره';
+                document.getElementById('audioStatus').className = 'audio-status success';
+                document.getElementById('progressFill').style.width = '100%';
+                showToast('پایان سوره', 'success');
+                
+                if (isRepeat) {
+                    setTimeout(() => {
+                        document.querySelectorAll('.aya-text').forEach(el => el.classList.remove('recited'));
+                        document.querySelectorAll('.playing-indicator').forEach(el => el.remove());
+                        playFullSurah(surahId, 0);
+                    }, 1000);
+                }
+                return;
+            }
+            
+            const verse = verses[idx];
+            const block = ayaElements[idx];
+            if (block) {
+                block.querySelector('.aya-text').classList.add('recited');
+                document.querySelectorAll('.playing-indicator').forEach(el => el.remove());
+                const indicator = document.createElement('span');
+                indicator.className = 'playing-indicator';
+                block.querySelector('.aya-number').after(indicator);
+                const btn = block.querySelector('.aya-actions button');
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                btn.classList.add('playing');
+            }
+            
+            const progress = ((idx + 1) / total) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            
+            playAudioWithFallback(surahId, verse.number, () => {
+                const block = ayaElements[idx];
+                if (block) {
+                    const btn = block.querySelector('.aya-actions button');
+                    btn.innerHTML = '<i class="fas fa-play"></i> پخش';
+                    btn.classList.remove('playing');
+                }
+                idx++;
+                if (idx < verses.length) {
+                    timeoutId = setTimeout(playNext, 500);
+                } else {
+                    document.querySelectorAll('.aya-text').forEach(el => el.classList.remove('recited'));
+                    document.querySelectorAll('.playing-indicator').forEach(el => el.remove());
+                }
+            });
+        }
+        playNext();
+    }
+
+    // ================================================================
+    //  ====== کنترل‌ها ======
+    // ================================================================
+    document.getElementById('stopAudioBtn').addEventListener('click', function() {
+        stopAllAudio();
+        showToast('پخش متوقف شد', 'info');
+    });
+
+    document.getElementById('repeatBtn').addEventListener('click', function() {
+        isRepeat = !isRepeat;
+        this.classList.toggle('active');
+        if (isRepeat) {
+            this.style.background = 'var(--gold)';
+            this.style.color = '#0b1220';
+            showToast('🔁 تکرار فعال شد', 'success');
+        } else {
+            this.style.background = '';
+            this.style.color = '';
+            showToast('تکرار غیرفعال شد', 'info');
+        }
+    });
+
+    document.getElementById('speedBtn').addEventListener('click', function() {
+        const speeds = [0.75, 1, 1.25, 1.5, 2];
+        const currentIndex = speeds.indexOf(playbackSpeed);
+        const nextIndex = (currentIndex + 1) % speeds.length;
+        playbackSpeed = speeds[nextIndex];
+        this.innerHTML = `<i class="fas fa-speed"></i> ${playbackSpeed}x`;
+        if (audio) audio.playbackRate = playbackSpeed;
+        showToast(`سرعت پخش: ${playbackSpeed}x`, 'info');
+    });
+
+    // ================================================================
+    //  ====== حالت‌ها ======
+    // ================================================================
+    document.getElementById('modeFull').addEventListener('click', function() {
+        this.classList.add('active');
+        document.getElementById('modeAya').classList.remove('active');
+        currentMode = 'full';
+        stopAllAudio();
+        if (currentSurahId) renderSurah(currentSurahId);
+        showToast('حالت پخش کامل', 'info');
+    });
+    
+    document.getElementById('modeAya').addEventListener('click', function() {
+        this.classList.add('active');
+        document.getElementById('modeFull').classList.remove('active');
+        currentMode = 'aya';
+        stopAllAudio();
+        if (currentSurahId) renderSurah(currentSurahId);
+        showToast('حالت پخش آیه‌به‌آیه', 'info');
+    });
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const val = this.value.trim();
+        renderSurahList(val);
+    });
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const theme = this.dataset.theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            const names = { dark: '🌙 تاریک', light: '☀️ روشن', muharram: '❤️ محرم' };
+            showToast(`تم ${names[theme]}`, 'info');
+        });
+    });
+
+    document.getElementById('backBtn').addEventListener('click', function() {
+        document.getElementById('quranContainer').classList.remove('active');
+        this.classList.remove('show');
+        document.getElementById('scrollTopBtn').classList.remove('show');
+        stopAllAudio();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.getElementById('scrollTopBtn').addEventListener('click', function() {
+        document.getElementById('quranContainer').scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    function renderSurahList(filter = '') {
+        const grid = document.getElementById('surahGrid');
+        grid.innerHTML = '';
+        
+        const filtered = surahList.filter(s => 
+            s.name.includes(filter) || 
+            s.nameAr.includes(filter) ||
+            s.id.toString().includes(filter)
+        );
+        
+        filtered.forEach(surah => {
+            const card = document.createElement('div');
+            card.className = 'surah-card';
+            card.innerHTML = `
+                <div class="surah-number">${surah.id}</div>
+                <div class="surah-name">${surah.name}</div>
+                <div class="surah-name-ar">${surah.nameAr}</div>
+                <div class="surah-info">
+                    <span>${surah.type}</span>
+                    <span>${surah.verses}</span>
+                    <span>ص${surah.page}</span>
+                </div>
+            `;
+            card.addEventListener('click', () => {
+                renderSurah(surah.id);
+                document.getElementById('searchInput').value = '';
+                renderSurahList();
+            });
+            grid.appendChild(card);
+        });
+    }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { document.getElementById('backBtn').click(); }
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            if (currentSurahId < 114) { renderSurah(currentSurahId + 1); e.preventDefault(); }
+        }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            if (currentSurahId > 1) { renderSurah(currentSurahId - 1); e.preventDefault(); }
+        }
+        if (e.key === ' ' || e.key === 'Space') { e.preventDefault(); stopAllAudio(); }
+    });
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    renderSurahList();
+    renderSurah(1);
+</script>
+
+</body>
+</html>
